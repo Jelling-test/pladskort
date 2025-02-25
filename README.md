@@ -1,27 +1,46 @@
-# Jelling Familie Camping - Strømmåler Oversigt
+# Camping Power Monitor
 
-Et interaktivt system til at overvåge status på strømmålere på campingpladsen.
+Dette projekt er en web-baseret løsning til at overvåge og visualisere strømforbrug på en campingplads.
 
 ## Funktioner
-- Vis målere på et kort over pladsen
-- Vis status med farver:
-  - Grøn = Tændt
-  - Gul = Slukket
-  - Rød = Offline
-- Tilføj nye målere med navn og MAC adresse
-- Slet målere ved at højreklikke på dem
+
+- Real-time overvågning af strømforbrug via MQTT
+- Interaktivt pladskort over campingpladsen
+- WebSocket integration for live opdateringer
+- Responsivt design der virker på alle enheder
+
+## Teknologier
+
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js
+- MQTT broker: Aedes
+- WebSocket kommunikation
 
 ## Installation
-1. Installer Node.js
-2. Kør `npm install` i projektmappen
-3. Start proxy serveren med:
-   ```
-   & "C:\Program Files\nodejs\node.exe" "mqtt-proxy.js"
-   ```
-4. Åbn `index.html` i en browser
 
-## Konfiguration
-MQTT broker indstillinger findes i `mqtt-proxy.js`:
-- Host: 192.168.9.61
-- Port: 1890
-- Brugernavn: homeassistant
+1. Installer Node.js dependencies:
+```bash
+npm install
+```
+
+2. Start MQTT proxy serveren:
+```bash
+node mqtt-proxy.js
+```
+
+3. Åbn `index.html` i en webbrowser
+
+## Dependencies
+
+- aedes: ^0.50.0
+- mqtt: ^5.3.5
+- websocket-stream: ^5.5.2
+
+## Struktur
+
+- `index.html` - Hovedsiden med brugergrænsefladen
+- `script.js` - Frontend JavaScript kode
+- `styles.css` - CSS styling
+- `mqtt-proxy.js` - MQTT til WebSocket proxy server
+- `map.jpg` - Kort over campingpladsen
+- `pladskort/` - Pladskort data og ressourcer
