@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelling Familie Camping - Strømmåler Oversigt</title>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jelling Familie Camping - Strømmåler Oversigt</h1>
+        
+        <div class="controls">
+            <button id="addMeterBtn">Tilføj Måler</button>
+            <div id="addMeterDialog" class="dialog hidden">
+                <div class="input-group">
+                    <label for="meterName">Måler navn (3 cifre):</label>
+                    <input type="text" id="meterName" maxlength="3" placeholder="f.eks. 101">
+                </div>
+                <div class="input-group">
+                    <label for="macAddress">MAC adresse:</label>
+                    <input type="text" id="macAddress" placeholder="f.eks. obk0884E7B7">
+                </div>
+                <p>Klik på kortet for at placere måleren</p>
+                <button id="cancelAdd">Annuller</button>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <canvas id="mapCanvas"></canvas>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <span class="status-dot green"></span> Tændt
+            </div>
+            <div class="legend-item">
+                <span class="status-dot yellow"></span> Slukket
+            </div>
+            <div class="legend-item">
+                <span class="status-dot red"></span> Offline
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
